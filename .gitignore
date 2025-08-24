@@ -1,0 +1,6 @@
+test.ipynb
+models
+.vscode
+results
+local_pkgs.egg-info
+figures/lc_data

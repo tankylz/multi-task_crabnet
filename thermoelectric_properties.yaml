@@ -1,0 +1,44 @@
+k:
+  units: W/mK
+  full_name: Total Thermal Conductivity
+  short_name: $\kappa$
+  column_name: Total Thermal Conductivity (W/mK)
+  take_log: true
+ke:
+  units: W/mk
+  full_name: Electronic Thermal Conductivity
+  short_name: $\kappa_e$
+  column_name: Electronic Thermal Conductivity (W/mK)
+  take_log: true
+kl:
+  units: W/mk
+  full_name: Lattice Thermal Conductivity
+  short_name: $\kappa_l$
+  column_name: Lattice Thermal Conductivity (W/mK)
+  take_log: true
+sigma:
+  units: S/cm
+  full_name: Electrical Conductivity
+  short_name: $\sigma$
+  column_name: Electrical Conductivity (S/cm)
+  take_log: true
+S:
+  units: µV/K
+  full_name: Seebeck Coefficient
+  short_name: S
+  column_name: Seebeck Coefficient (µV/K)
+  take_log: false
+PF:
+  units: µW cm$^{-1}$ K$^{-2}$
+  full_name: Power Factor
+  short_name: PF
+  column_name: Power Factor (µW/cmK²)
+  take_log: true
+zT:
+  units: null
+  full_name: Figure of Merit
+  short_name: $zT$
+  column_name: zT
+  take_log: true
+
+

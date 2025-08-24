@@ -1,0 +1,50 @@
+name: mt-crabnet_nometal_localenv
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.10.15
+  - numpy=1.26.4
+  - pandas=1.5.3
+  - pip=25.1.1
+  - matplotlib=3.10.3
+  - seaborn=0.13.2
+  - jupyter=1.1.1
+  - ipykernel=6.29.5
+  - scikit-learn=1.5.2
+  - pymatgen=2024.5.1
+  - matminer=0.9.2
+  - joblib=1.5.1
+  - tqdm=4.67.1
+  - mendeleev=1.0.0
+  - openpyxl=3.1.5
+  - scikit-optimize=0.10.2
+  - bokeh=3.7.3
+  - dcor=0.6
+  - pip:
+    - -e .
+    - transformers==4.53.1 # huggingface API
+    - torch==1.12.0 # for compatibility with pymatgen
+
+
+variables:
+  PIP_DEFAULT_TIMEOUT: 500 
+
+
+# commands to run in terminal (for macOS)
+# to install the environment
+# conda env create -n mt-crabnet_nometal_localenv -f environment.yml
+
+# to activate the environment
+# conda activate mt-crabnet_nometal_localenv
+
+# to update the environment
+# conda env update -n mt-crabnet_nometal_localenv -f environment.yml --prune
+
+# to remove the environment
+# conda remove -n mt-crabnet_nometal_localenv --all
+
+# to save the package versions
+# conda activate mt-crabnet_nometal_localenv
+# conda list --export > full_dependencies_nometal.txt
