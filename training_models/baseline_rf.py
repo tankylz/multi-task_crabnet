@@ -95,7 +95,7 @@ for random_seed in [1, 42, 88, 123, 1201]:
 
         # For Random Search
         search_space = {
-            'n_estimators': [200, 500, 1000, 1500],  # Use a list of integers, not arrays
+            'n_estimators': [200, 500, 1000, 1500],
             'max_depth': [10, 30, 50, None],
             'min_samples_split': [2, 5, 10]        
             }
