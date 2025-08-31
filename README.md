@@ -31,7 +31,7 @@ Aside from MT CrabNet, the code for the baseline models (DopNet and Random Fores
 </p>
 
 ## How to Cite
-If this dataset and accompanying code has been useful for your work, please consider citing the paper and `GitHub` repo:
+If this repository has been useful for your work, please consider citing the paper and `GitHub` repo:
 
 - [ ] TODO: add citation and bibtex for model DOI and sysTEm dataset repo 
 
