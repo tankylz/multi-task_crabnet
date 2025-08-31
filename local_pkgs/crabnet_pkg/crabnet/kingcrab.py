@@ -577,8 +577,7 @@ class Encoder(nn.Module):
             x = x.transpose(0, 1)
         else:
             if self.one_hot_layer == 'concat_at_attn':
-                property_one_hot = property_one_hot.to(x.device).unsqueeze(1).expand(-1, x.shape[1], -1)
-                x = torch.cat((x, property_one_hot), dim=-1)
+                raise ValueError("one_hot_layer cannot be 'concat_at_attn' if attention is not used")
 
         if self.fractional:
             if self.how_to_extend == 'concat_at_input':

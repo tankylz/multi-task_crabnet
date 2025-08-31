@@ -62,7 +62,7 @@ for random_seed in [1, 42, 88, 123, 1201]:
         df = pd.concat([te_df['#'], te_df[composition_col], te_df[temp_col], te_df[target_col], feature_df], axis=1)
 
         # # when we want to test on a smaller dataset
-        # truncated_size = 50
+        # truncated_size = 700
         # df = df.head(truncated_size)
 
         # generate a column with reduced compositions

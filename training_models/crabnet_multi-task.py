@@ -71,9 +71,10 @@ for prop in unique_props:
     target_scaler[prop] = 'Standard'
 
 # setting CV
-n_spilts = 5
+n_splits = 5
 elem_prop = 'matscibert'
-one_hot_layer = 'concat_at_attn'
+one_hot_layer = 'concat_at_attn' # or integers (from 0 to the # of residual block hidden layers + 1)
+# 0 means concat at the input of residual block
 val_proportion = 0.1
 criterion = 'RobustL2'
 force_cpu = True # Force CPU usage
@@ -86,18 +87,18 @@ reduced_series = df_copy['formula']
 num_properties = df[target_name_col].nunique()
 
 for rnd_seed in rnd_ls:
-        for how_to_extend in ['concat_at_input', 'tile_at_input', 'concat_at_output']:
+        for how_to_extend in ['concat_at_input', 'tile_at_input', 'concat_at_output', ]:
 
             np.random.seed(rnd_seed)
             torch.manual_seed(rnd_seed)
             random.seed(rnd_seed)
 
-            comp_k_fold = preprocess.CompositionKFold(n_splits=n_spilts, shuffle=True, random_state=rnd_seed)
+            comp_k_fold = preprocess.CompositionKFold(n_splits=n_splits, shuffle=True, random_state=rnd_seed)
 
             # results df
             actual_vs_predicted_df = pd.DataFrame()
 
-            model_name = f'MultiTask_{criterion}_{elem_prop}_{how_to_extend}_onehotappend{one_hot_layer}_{n_spilts}splits_seed{rnd_seed}'
+            model_name = f'MultiTask_{criterion}_{elem_prop}_{how_to_extend}_onehotappend{one_hot_layer}_{n_splits}splits_seed{rnd_seed}'
 
             for fold_idx, (train_idx, test_idx) in enumerate(comp_k_fold.split(reduced_series)):
                 print(f"Fold {fold_idx + 1} / {comp_k_fold.n_splits}")

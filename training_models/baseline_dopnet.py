@@ -100,7 +100,7 @@ for random_seed in [1, 42, 88, 123, 1201]:
             comps_test = [x.comp for x in dataset_test]
             targets_test = numpy.array([x.target for x in dataset_test]).reshape(-1, 1)
             dop_dataset_test = dp.get_dataset(dataset_test, max_dops)
-            data_loader_test = DataLoader(dop_dataset_test, batch_size=32)
+            data_loader_test = DataLoader(dop_dataset_test, batch_size=batch_size)
 
             # define host embedding network and its optimizer
             emb_host = ae.Autoencoder(dataset[0].host_feat.shape[0], 64).to(device)

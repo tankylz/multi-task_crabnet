@@ -167,6 +167,7 @@ def load_dataset(dataset_file_name, comp_idx, target_idx, max_dops, cond_idx=Non
         host_feat, dop_feats = calc_atom_feats(elem_feats, comps[i], max_dops, doping_threshold=doping_threshold)
         conds = None
         if cond_idx is not None:
+            #*  concat external conditions to host e.g, 124 + 1 -> 125
             host_feat = numpy.hstack([host_feat, norm_conds[i]])
             conds = data[i, cond_idx]
         dataset.append(DopedMat(comps[i], host_feat, dop_feats, conds, targets[i], idx=i))
@@ -191,6 +192,7 @@ def calc_atom_feats(elem_feats, comp, max_dops, doping_threshold):
         ratio = float(elems[e])
 
         if ratio <= doping_threshold:
+            #* 31 ele feat + 1 doping ratio -> last dim 32
             dop_feats[n_dops, :] = numpy.hstack([numpy.log10(ratio), atom_vec])
             n_dops += 1
         else:
@@ -198,7 +200,7 @@ def calc_atom_feats(elem_feats, comp, max_dops, doping_threshold):
             host_feats.append(atom_vec)
         
 
-
+    #* 31 * 4 -> last dim 124. External features not added yet
     host_feat = numpy.hstack([w_sum_vec, numpy.std(host_feats, axis=0), numpy.min(host_feats, axis=0), numpy.max(host_feats, axis=0)])
 
     return host_feat, dop_feats

@@ -29,7 +29,7 @@ for rnd_seed in random_ls:
     np.random.seed(rnd_seed)
     random.seed(rnd_seed)
 
-    for how_to_extend in ['tile_at_input']: # other options are ['concat_at_input', 'tile_at_output']
+    for how_to_extend in ['concat_at_output']: # options are ['concat_at_input', 'tile_at_input', 'concat_at_output']
         for target_name, v in properties.items():
             print(f"Training model for {v['full_name']}")
             target_property = v['column_name']
@@ -72,7 +72,7 @@ for rnd_seed in random_ls:
 
             df_copy = df.copy()
             val_proportion = 0.1
-            n_spilts = 5
+            n_splits = 5
             elem_prop = 'matscibert'
             criterion = 'RobustL2'
 
@@ -82,11 +82,11 @@ for rnd_seed in random_ls:
 
 
 
-            model_name = f'SingleTask_{transform_str}Transform_{target_name}_{criterion}_DopedCrab_{elem_prop}_{how_to_extend}_{n_spilts}splits_Seed{rnd_seed}'
+            model_name = f'SingleTask_{transform_str}Transform_{target_name}_{criterion}_DopedCrab_{elem_prop}_{how_to_extend}_{n_splits}splits_Seed{rnd_seed}'
 
 
 
-            comp_k_fold = preprocess.CompositionKFold(n_splits=n_spilts, shuffle=True, random_state=rnd_seed)
+            comp_k_fold = preprocess.CompositionKFold(n_splits=n_splits, shuffle=True, random_state=rnd_seed)
 
             results = []
             actual_vs_predicted_df = pd.DataFrame(columns=['Index', 'Random Seed', 'K_fold', '#', 'Actual', 'Predicted', 'Uncertainty'])

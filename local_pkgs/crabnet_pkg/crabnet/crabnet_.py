@@ -102,7 +102,7 @@ class CrabNet(nn.Module):
         num_properties: int = 1,
         property_name_col: str = None,
         property_one_hot_col: str = None,
-        one_hot_layer: int = None
+        one_hot_layer: Optional[int] = None
     ):
         """
         Instantiate a CrabNet model.
