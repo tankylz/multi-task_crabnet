@@ -54,7 +54,7 @@ You are recommended to clone the entire repository. The `local_pkgs` folder cont
 
 
 ### Downloading the required dependencies
-`conda` or `venv` can be used to install the required dependencies. There are different versions of the packages as different devices were used to run the models, and the CrabNet model that we modified had some known compatibility issues with newer `PyTorch` versions. Please see [Known issues with CrabNet right now](#known-issues-with-crabnet-right-now).
+`conda` or `venv` can be used to install the required dependencies. There are different versions of the packages as different devices were used to run the models, and the CrabNet model that we modified had some known compatibility issues with newer `PyTorch` versions. Please see [Known issues with the previous CrabNet model](#known-issues-with-the-previous-crabnet-model).
 
 
 `environment.yml` - contains the dependencies for running a `conda` environment. This `pyTorch` version should work for CrabNet. All dependencies are listed in `full_dependencies_nometal.txt`.
@@ -84,7 +84,7 @@ You are recommended to clone the entire repository. The `local_pkgs` folder cont
   Output figures found in the work. `generating_figures.ipynb` in root contains the code for generating these figures
 
 
-## Known issues with CrabNet right now
+## Known issues with the previous CrabNet model
 
 The latest CrabNet repository prior to this work had the following issues:
 - CrabNet does not work with Python Versions > 3.10 https://github.com/sparks-baird/CrabNet/issues/78
