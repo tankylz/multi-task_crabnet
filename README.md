@@ -31,10 +31,22 @@ Aside from MT CrabNet, the code for the baseline models (DopNet and Random Fores
 </p>
 
 ## How to Cite
-If this repository has been useful for your work, please consider citing the paper and `GitHub` repo:
+If this repository has been useful for your work, please consider citing the paper, which is currently a preprint:
 
-- [ ] TODO: add citation and bibtex for model DOI and sysTEm dataset repo 
-
+```
+@misc{Tang_MultitaskAttentionDoped_2025,
+  title = {Multi-Task Attention for Doped Thermoelectric Properties Prediction},
+  author = {Tang, Leng Ze and Mohanty, Trupti and Baird, Sterling G. and Ng, Leonard W. T. and Sparks, Taylor D.},
+  year = {2025},
+  month = sep,
+  publisher = {ChemRxiv},
+  doi = {10.26434/chemrxiv-2025-jcgjz},
+  url = {https://chemrxiv.org/engage/chemrxiv/article-details/68b42efda94eede154b776b1},
+  urldate = {2025-09-03},
+  archiveprefix = {ChemRxiv},
+  keywords = {attention mechanism,doped materials,figure of merit,machine learning,materials informatics,multi-task learning,thermoelectric}
+}
+```
 
 ## Using the code in this repository
 
